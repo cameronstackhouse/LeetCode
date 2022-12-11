@@ -5,11 +5,14 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        if l1 == None or l2 == None:
+        if l1 == None:
+            return l2
+        
+        if l2 == None:
             return l1
         
         start_val = l1.val + l2.val
-
+        
         if start_val < 10:
             ansNode = ListNode(start_val)
             ansNode.next = self.addTwoNumbers(l1.next, l2.next)
@@ -18,5 +21,5 @@ class Solution:
         else:
             remainder = l1.val + l2.val - 10
             ansNode = ListNode(remainder)
-            ansNode.next = self.addTwoNumbers(listNode(1), self.addTwoNumbers(l1.next, l2.next))
+            ansNode.next = self.addTwoNumbers(ListNode(1), self.addTwoNumbers(l1.next, l2.next))
             return ansNode
