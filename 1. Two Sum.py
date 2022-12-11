@@ -14,7 +14,7 @@ class Solution:
         # Iterates through numbers in list and stores their indicies in dictionary
         for i in range(len(nums)):
             d[nums[i]] = i
-        
+        #TEST
         # Iterates through numbers in list
         for i in range(len(nums)):
             compliment = target - nums[i] # Calculates compliment to the value to make the target value
